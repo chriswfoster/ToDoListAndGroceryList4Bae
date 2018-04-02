@@ -16,13 +16,12 @@ class GroceryList extends Component {
       handleItemDelete,
       handleWipeList
     } = this.props
-    console.log(this.props)
 
     return (
       <div className="listMainDiv">
         <form onSubmit={() => handleSubmit(inputText, "grocerylist")}>
-          <input type="text" onChange={e => handleText(e.target.value)} />
-          <input type="submit" value="SUBMIT" />
+          <input type="text" onChange={e => handleText(e.target.value, "grocerylisttext")} autoFocus />
+          <input type="submit" value="SUBMIT"  />
         </form>
 
         <div>

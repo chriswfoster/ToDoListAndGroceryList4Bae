@@ -13,7 +13,8 @@ class Home extends Component {
     super()
     this.state = {
       arrayOfItems: [],
-      inputText: ""
+      grocerylisttext: "",
+      todolisttext: ""
     }
     this.handleItemDelete = this.handleItemDelete.bind(this)
     this.handleWipeList = this.handleWipeList.bind(this)
@@ -33,8 +34,8 @@ class Home extends Component {
       .then(response => this.setState({ arrayOfItems: response.data }))
       .catch(err => console.log(err))
   }
-  handleText(val) {
-    this.setState({ inputText: val })
+  handleText(val, text) {
+    this.setState({ [text]: val })
   }
   handleWipeList(val) {
     axios
@@ -43,8 +44,9 @@ class Home extends Component {
       .catch(err => console.log(err))
   }
   handleItemDelete(item) {
-    axios.delete("/api/deleteitem/" + item)
-    .then(response => this.setState({arrayOfItems: response.data}))
+    axios
+      .delete("/api/deleteitem/" + item)
+      .then(response => this.setState({ arrayOfItems: response.data }))
   }
 
   render() {
@@ -90,7 +92,7 @@ class Home extends Component {
             path="/grocerylist"
             render={() => (
               <GroceryList
-                inputText={this.state.inputText}
+                inputText={this.state.grocerylisttext}
                 handleSubmit={this.handleSubmit}
                 handleText={this.handleText}
                 arrayOfItems={this.state.arrayOfItems}
@@ -99,12 +101,18 @@ class Home extends Component {
               />
             )}
           />
-          <RouteWithProps
-            component={ToDoList}
-            inputText={this.state.inputText}
-            handleSubmit={this.handleSubmit}
-            handleText={this.handleText}
-            arrayOfItems={this.state.arrayOfItems}
+          <Route
+            path="/todolist"
+            render={() => (
+              <ToDoList
+                inputText={this.state.todolisttext}
+                handleSubmit={this.handleSubmit}
+                handleText={this.handleText}
+                arrayOfItems={this.state.arrayOfItems}
+                handleItemDelete={this.handleItemDelete}
+                handleWipeList={this.handleWipeList}
+              />
+            )}
           />
         </Switch>
       </div>
