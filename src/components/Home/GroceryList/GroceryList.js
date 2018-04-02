@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-import '../list.css'
+import './list.css'
 
 class GroceryList extends Component{
     constructor(){
@@ -12,26 +12,11 @@ class GroceryList extends Component{
         }
     }
 
-    handleSubmit(item){
-        axios.post('/api/additem?item='+item)
-        .then(response => this.setState({arrayOfItems: response.data}))
-        .catch(err => console.log(err))
-    }
-    handleText(val){
-        this.setState({inputText: val})
-    }
-    handleWipeList(val){
-        axios.delete('/api/wipelist')
-        .then (response => this.setState({arrayOfItems: response.data}))
-        .catch(err => console.log(err))
-    }
-    handleItemDelete(item){
-        axios.delete('/api/deleteitem?item='+item)
-    }
 
 
 render(){
     const {arrayOfItems} = this.state;
+    console.log(this.props)
     
 return(
 <div className="listMainDiv">
