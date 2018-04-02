@@ -29,3 +29,11 @@
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0);
 }
+
+@media (max-width: 465px) {
+  .homeRoutingButtons {
+    padding: 0.25em;
+    font-size: 1.5em;
+    border-width: 2px;
+  }
+}
