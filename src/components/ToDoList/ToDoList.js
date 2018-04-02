@@ -1,6 +1,14 @@
 import React, {Component} from 'react'
 
 class ToDoList extends Component{
+    constructor(){
+        super()
+        this.state = {
+            
+        }
+    }
+
+
 
 render(){
 return(
