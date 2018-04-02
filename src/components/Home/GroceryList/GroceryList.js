@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import axios from "axios"
 
 import "./list.css"
 
@@ -9,27 +8,38 @@ class GroceryList extends Component {
   }
 
   render() {
-    const { inputText, handleSubmit, handleText, arrayOfItems, handleItemDelete } = this.props
+    const {
+      inputText,
+      handleSubmit,
+      handleText,
+      arrayOfItems,
+      handleItemDelete,
+      handleWipeList
+    } = this.props
     console.log(this.props)
 
     return (
       <div className="listMainDiv">
         <form onSubmit={() => handleSubmit(inputText, "grocerylist")}>
-          <input
-            type="text"
-            onChange={e => handleText(e.target.value)}
-            id="hi"
-          />
+          <input type="text" onChange={e => handleText(e.target.value)} />
           <input type="submit" value="SUBMIT" />
         </form>
 
         <div>
-          {arrayOfItems.map(item => {
-            <p onClick={() => handleItemDelete(item.id)}>{item.text}</p>
-          })}
+          {arrayOfItems.map(
+            item =>
+              item.type_is === "grocerylist" ? (
+                <p key={item.id} onClick={() => handleItemDelete(item.id)}>
+                  {item.todo}
+                </p>
+              ) : null
+          )}
         </div>
 
-        <button> CLEAR ALL </button>
+        <button onClick={() => handleWipeList("grocerylist")}>
+          {" "}
+          CLEAR ALL{" "}
+        </button>
       </div>
     )
   }

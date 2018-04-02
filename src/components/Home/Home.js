@@ -38,16 +38,18 @@ class Home extends Component {
   }
   handleWipeList(val) {
     axios
-      .delete("/api/wipelist")
+      .delete("/api/wipelist/" + val)
       .then(response => this.setState({ arrayOfItems: response.data }))
       .catch(err => console.log(err))
   }
   handleItemDelete(item) {
-    axios.delete("/api/deleteitem?item=" + item)
+    axios.delete("/api/deleteitem/" + item)
+    .then(response => this.setState({arrayOfItems: response.data}))
   }
 
   render() {
     //// I'm passing props with 2 different methods, what is wrong with me...
+    console.log(this.state)
 
     const RouteWithProps = ({
       path = "/todolist",
@@ -93,6 +95,7 @@ class Home extends Component {
                 handleText={this.handleText}
                 arrayOfItems={this.state.arrayOfItems}
                 handleItemDelete={this.handleItemDelete}
+                handleWipeList={this.handleWipeList}
               />
             )}
           />
