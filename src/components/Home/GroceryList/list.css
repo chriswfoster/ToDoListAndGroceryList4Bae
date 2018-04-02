@@ -14,7 +14,7 @@
   align-content: stretch;
 }
 .listPs {
-  border-radius: 553px;
+  border-radius: 66vw;
   border-style: solid;
   border-color: white;
   padding: 1em;
@@ -50,7 +50,7 @@
 
 @media (max-width: 758px) {
   .listPs {
-    width: 90vw;
+    width: 88vw;
     font-size: 1.5em;
     margin-bottom: 0vh;
   }
