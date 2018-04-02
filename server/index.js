@@ -12,8 +12,8 @@ app.get(cors())
 app.get(json())
 
 
-
+app.post('/api/additem', (req, res) => console.log(req))
 
 
 module.exports = router;
-app.listen(port, ()=> `Your are now listening to ${port}FM!`)
+app.listen(port, ()=> console.log(`Your are now listening to ${port}FM!`))
