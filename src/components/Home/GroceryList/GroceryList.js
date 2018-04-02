@@ -1,41 +1,37 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React, { Component } from "react"
+import axios from "axios"
 
-import './list.css'
+import "./list.css"
 
-class GroceryList extends Component{
-    constructor(){
-        super()
-        this.state = {
-            inputText: "",
-            arrayOfItems: []
-        }
-    }
+class GroceryList extends Component {
+  constructor() {
+    super()
+  }
 
-
-
-render(){
-    const {arrayOfItems} = this.state;
+  render() {
+    const { inputText, handleSubmit, handleText, arrayOfItems, handleItemDelete } = this.props
     console.log(this.props)
-    
-return(
-<div className="listMainDiv">
-<form onSubmit={()=> this.handleSubmit(this.state.inputText)}>
-<input onChange={(e)=> this.handleText(e.target.value)}/>
-<input type="submit" text="ADD"/>
-</form>
 
-<div>
-    {arrayOfItems.map((item) => {
-        <p onClick={()=> this.handleItemDelete(item.id)}>
-            {item.text}
-            </p>
-    })}
-</div>
+    return (
+      <div className="listMainDiv">
+        <form onSubmit={() => handleSubmit(inputText, "grocerylist")}>
+          <input
+            type="text"
+            onChange={e => handleText(e.target.value)}
+            id="hi"
+          />
+          <input type="submit" value="SUBMIT" />
+        </form>
 
-<button> CLEAR ALL </button>
-</div>
-)
-}
+        <div>
+          {arrayOfItems.map(item => {
+            <p onClick={() => handleItemDelete(item.id)}>{item.text}</p>
+          })}
+        </div>
+
+        <button> CLEAR ALL </button>
+      </div>
+    )
+  }
 }
 export default GroceryList
