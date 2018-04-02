@@ -38,14 +38,22 @@ class Home extends Component {
     this.setState({ [text]: val })
   }
   handleWipeList(val) {
-    axios
-      .delete("/api/wipelist/" + val)
-      .then(response => this.setState({ arrayOfItems: response.data }))
-      .catch(err => console.log(err))
+    let confirmer = window.confirm(
+      `Are you sure you want to wipe the ENTIRE list?`
+    )
+    confirmer === true
+      ? axios
+          .delete("/api/wipelist/" + val)
+          .then(response => this.setState({ arrayOfItems: response.data }))
+          .catch(err => console.log(err))
+      : null
   }
-  handleItemDelete(item) {
+  handleItemDelete(id, item) {
+    let confirmer = window.confirm(
+        `Remove ${item} from list?`
+      )
     axios
-      .delete("/api/deleteitem/" + item)
+      .delete("/api/deleteitem/" + id)
       .then(response => this.setState({ arrayOfItems: response.data }))
   }
 

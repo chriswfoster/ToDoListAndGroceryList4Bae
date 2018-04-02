@@ -1,4 +1,49 @@
-.listMainDiv{
-    width: 100vw;
-    height: 80vh;
+.listMainDiv {
+  width: 100vw;
+  height: 80vh;
+  overflow: scroll;
+}
+.listFlex {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+}
+.listPs {
+  border-radius: 553px;
+  border-style: solid;
+  border-color: white;
+  padding: 1em;
+  min-width: 30vw;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+.listPs:hover {
+  border-color: red;
+}
+
+.inputbox {
+  height: 5vh;
+  border-radius: 888px;
+  padding: 1vh;
+  font-size: 2em;
+  border-color: blue;
+}
+
+.submitButton {
+  height: 6vh;
+  border-radius: 0 0 22px 22px;
+  border-style: none solid solid solid;
+  border-color: blue;
+  padding: 1vh;
+  font-size: 2em;
+  background-color: white;
+}
+.submitButton:hover {
+  background-color: red;
 }
