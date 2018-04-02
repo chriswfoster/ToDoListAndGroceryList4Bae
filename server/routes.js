@@ -22,7 +22,7 @@ routes.delete("/api/wipelist/:id", (req, res) =>
     .then(response => res.status(200).json(response))
 )
 
-routes.delete("/api/deleteitem/:id" , (req, res) =>
+routes.delete("/api/deleteitem/:id", (req, res) =>
   req.app
     .get("db")
     .removeItem(req.params.id)
