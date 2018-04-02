@@ -2,6 +2,7 @@
   width: 100vw;
   height: 80vh;
   overflow: scroll;
+  background-color: black;
 }
 .listFlex {
   width: 100vw;
@@ -41,7 +42,7 @@
   border-style: none solid solid solid;
   border-color: blue;
   padding: 1vh;
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: white;
 }
 .submitButton:hover {
@@ -53,5 +54,14 @@
     width: 88vw;
     font-size: 1.5em;
     margin-bottom: 0vh;
+  }
+  .inputbox {
+    width: 90vw;
+  }
+}
+@media (max-height: 560px) {
+  .submitButton {
+    font-size: 0.8em;
+    padding: 0.5vh;
   }
 }
