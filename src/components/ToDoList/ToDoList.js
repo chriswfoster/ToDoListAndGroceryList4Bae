@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
-class cmToDoList extends Component{
+class ToDoList extends Component{
 
 render(){
 return(
-<div>
-
+<div className="listMainDiv">
+To do list
 </div>
 )
 }
