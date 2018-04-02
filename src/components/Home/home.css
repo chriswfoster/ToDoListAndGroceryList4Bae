@@ -1,32 +1,31 @@
 .homeMain {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }
 
-.homeRoutingButtons{
-    border-radius: 553px;
-    border-color: white;
-    border-style: solid;
-    border-width: 5px;
-    padding: 1em;
-    font-size: 2em;
-    
+.homeRoutingButtons {
+  border-radius: 553px;
+  border-color: white;
+  border-style: solid;
+  border-width: 5px;
+  padding: 1em;
+  font-size: 2em;
 }
-.homeRoutingButtons:hover{
-    border-color: red;
+.homeRoutingButtons:hover {
+  border-color: red;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+  background: rgba(0, 0, 0, 0);
 }

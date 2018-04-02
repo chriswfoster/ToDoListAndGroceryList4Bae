@@ -49,12 +49,12 @@ class Home extends Component {
       : null
   }
   handleItemDelete(id, item) {
-    let confirmer = window.confirm(
-        `Remove ${item} from list?`
-      )
-    axios
-      .delete("/api/deleteitem/" + id)
-      .then(response => this.setState({ arrayOfItems: response.data }))
+    let confirmer = window.confirm(`Remove ${item} from list?`)
+    confirmer === true
+      ? axios
+          .delete("/api/deleteitem/" + id)
+          .then(response => this.setState({ arrayOfItems: response.data }))
+      : null
   }
 
   render() {

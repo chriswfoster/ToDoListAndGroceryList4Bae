@@ -47,3 +47,11 @@
 .submitButton:hover {
   background-color: red;
 }
+
+@media (max-width: 758px) {
+  .listPs {
+    width: 90vw;
+    font-size: 1.5em;
+    margin-bottom: 0vh;
+  }
+}
