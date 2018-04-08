@@ -16,7 +16,7 @@ For example, this:
   flex-direction: row;
   align-items: center;
 }
-```
+``
 
 becomes this:
 
