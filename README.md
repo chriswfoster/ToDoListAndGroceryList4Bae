@@ -1,3 +1,3 @@
-<div style="bgcolor: black, width: 100vw, height: 100vh">
+<div bgcolor="black">
 <img src ="https://raw.githubusercontent.com/chriswfoster/ToDoListAndGroceryList4Bae/master/readmepic/todopic.JPG" />
 </div>
